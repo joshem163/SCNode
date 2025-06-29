@@ -73,7 +73,7 @@ def Domain_Fe(DataFram, basis, sel_basis, feature_names):
         SFec.append(Svec)
 
     return Fec, SFec
-def CC_feature(dataset_name):
+def SCN_feature(dataset_name):
     if dataset_name=='cora':
         dataset = Planetoid(root='/tmp/cora', name='Cora', split='geom-gcn')
     elif dataset_name=='Citeseer':
@@ -113,8 +113,8 @@ def CC_feature(dataset_name):
     concatenated_list = np.concatenate((Fec, SFec, F_vec,), axis=1)
 
     # Convert to a NumPy array (tensor)
-    tensor_CC = torch.tensor(concatenated_list).float()
-    return tensor_CC
+    tensor_scn = torch.tensor(concatenated_list).float()
+    return tensor_scn
 
 
 
