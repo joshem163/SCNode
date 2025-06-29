@@ -4,7 +4,7 @@ import torch
 import torch.nn.functional as F
 
 import torch_geometric.transforms as T
-from ClassContrast import *
+from SCNode import *
 from model import GCN
 from torch_geometric.datasets import Planetoid,WebKB
 
@@ -59,7 +59,7 @@ def main():
     parser.add_argument('--runs', type=int, default=10)
     args = parser.parse_args()
     print(args)
-    cc_feature=CC_feature(args.dataset_name)
+    scn_feature=SCN_feature(args.dataset_name)
 
     device = f'cuda:{args.device}' if torch.cuda.is_available() else 'cpu'
     device = torch.device(device)
@@ -79,7 +79,7 @@ def main():
 
     #dataset = Planetoid(root='/tmp/cora', name='Cora',split='geom-gcn', transform=T.Compose([T.ToUndirected(), T.ToSparseTensor()]))
     data = dataset[0]
-    data.x=cc_feature
+    data.x=scn_feature
     print(data)
     #data.adj_t = data.adj_t.to_symmetric()
 
