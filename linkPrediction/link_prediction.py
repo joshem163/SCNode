@@ -247,8 +247,8 @@ for i in range(10):
     y_valid.append(y_valid_i)
     y_te.append(y_test_i)
 
-# import CC features
-with open( path + 'CC_Feature_'+name+'.csv', 'r') as f1:
+# import scn features
+with open( path + 'SCN_Feature_'+name+'.csv', 'r') as f1:
     data_x = f1.readlines()[1:]
 
 data_split = [line.strip().split(',') for line in data_x]
