@@ -50,7 +50,7 @@ def main():
     parser.add_argument('--log_steps', type=int, default=50)
     parser.add_argument('--num_layers', type=int, default=2)
     parser.add_argument('--epochs', type=int, default=200)
-    parser.add_argument('--runs', type=int, default=5)
+    parser.add_argument('--runs', type=int, default=10)
     args = parser.parse_args()
 
     device = f'cuda:{args.device}' if torch.cuda.is_available() else 'cpu'
