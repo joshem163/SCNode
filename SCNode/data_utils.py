@@ -3,7 +3,7 @@ import torch.nn.functional as F
 from torch_geometric.datasets import HeterophilousGraphDataset, WikiCS
 import numpy as np
 from sklearn.metrics import roc_auc_score, f1_score
-
+##### adopted from https://github.com/LUOyk1999/tunedGNN/tree/main ######
 
 def rand_train_test_idx(label, train_prop=0.5, valid_prop=0.25, ignore_negative=True):
     """randomly splits label into train/valid/test splits"""
